@@ -31,12 +31,12 @@ Ba lượt tua bắt được gì (lượt 1 nhìn ID, lượt 2 frame đầu/cu
 - Lượt 2: Phát hiện 2 frame đầu khi xe mới chớm xuất hiện ở mép ảnh bị thiếu bbox và 1 frame cuối xe đã ra khỏi màn hình nhưng vẫn còn track.
 - Lượt 3: Sửa lại các vị trí bbox bị lệch tâm/chưa khít do tính năng auto-interpolation kéo thẳng qua đoạn xe đổi hướng.
 
-Kiểm chéo với: `Phạm Văn A`. Chi tiết ở `reports/review_partner.md`.
-Số lỗi bạn tìm được trong bản của bạn ấy: `3`. Số lỗi bạn ấy tìm được trong bản của bạn: `2`.
+Kiểm chéo với: `N/A (Làm cá nhân)`. Chi tiết ở `reports/review_partner.md`.
+Số lỗi bạn tìm được trong bản của bạn ấy: `N/A`. Số lỗi bạn ấy tìm được trong bản của bạn: `N/A`.
 
 Ca nào hai người quyết khác nhau, và luật nào còn thiếu trong `GUIDELINE_MINI.md`?
 
-Hai người quyết định khác nhau ở ca xe bị che khuất hơn 70% bởi cây xanh phía góc đường: một bên tiếp tục gán track_id, một bên ngắt track. Luật còn thiếu trong `GUIDELINE_MINI.md` là ngưỡng che khuất tối đa (Occlusion Threshold, ví dụ: $>70\%$ bị che thì bỏ qua hay tiếp tục giữ ID) và quy định rõ thời gian chờ tối đa (lost frame count) trước khi ngắt track.
+Do thực hiện cá nhân, không có ca bất đồng giữa các người gán nhãn. Tuy nhiên, qua quá trình tự gán nhãn, nhận thấy `GUIDELINE_MINI.md` còn thiếu luật rõ ràng về ngưỡng che khuất tối đa (Occlusion Threshold, ví dụ: $>70\%$ bị che thì bỏ qua hay tiếp tục giữ ID) và thời gian chờ tối đa (lost frame count) trước khi ngắt track khi xe tạm thời mất hút.
 
 ## 3. Pre-gold lock và chấm trước/sau rework
 
@@ -109,7 +109,7 @@ Bạn sẽ sửa gì trong `GUIDELINE_MINI.md`, và đổi gì trong quy trình 
   - Bổ sung quy định rõ ràng về Occlusion Threshold (bỏ qua nếu vật thể bị che $>70\%$).
   - Chuẩn hóa quy tắc vẽ Bbox ở vùng biên (Edge Boundary Rule): Chỉ bắt đầu gán khi vật thể lộ diện trên 20% diện tích xe.
 - **Đổi quy trình làm việc**:
-  - Áp dụng triệt để quy trình tua 3 lượt ngay từ clip đầu tiên.
+  - Áp dụng triệt để quy trình tự kiểm tua 3 lượt ngay từ clip đầu tiên.
   - Sử dụng các model tracker nhẹ để hỗ trợ pre-labeling hoặc dùng script kiểm tra tự động (sanity check script) nhằm tìm các bbox bị giật/nhảy vị trí đột ngột trước khi thực hiện bước chốt (lock pre-gold).
 
 ## 7. Tệp đã nộp
@@ -123,5 +123,5 @@ Bạn sẽ sửa gì trong `GUIDELINE_MINI.md`, và đổi gì trong quy trình 
 - [x] `outputs/model_reid_clip_01.txt`
 - [x] `outputs/model_run_config.json`
 - [x] `outputs/eval_bytetrack_vs_gold.json`, `outputs/eval_reid_vs_gold.json`, `outputs/eval_reid_vs_me.json`
-- [x] `reports/review_partner.md`
+- [x] `reports/review_partner.md` (Đã cập nhật trạng thái thực hiện cá nhân)
 - [x] `reports/REPORT.md` (file này)
