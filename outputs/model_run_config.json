@@ -1,0 +1,8 @@
+{
+  "model": "yolo26n.pt",
+  "clip": "data/clips/clip_01",
+  "imgsz": 960,
+  "conf": 0.25,
+  "iou": 0.7,
+  "device": "cpu"
+}
